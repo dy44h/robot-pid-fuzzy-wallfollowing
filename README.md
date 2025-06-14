@@ -1,16 +1,16 @@
 #include <Wire.h>
-#include <MPU6050.h> // Asumsi menggunakan library MPU6050 yang kompatibel dengan API Jeff Rowberg
+#include <MPU6050.h> 
 #include <math.h>
 
-// Definisi Pin (sesuai permintaan, tidak diubah)
+// Definisi Pin 
 #define in1 27
 #define in2 26
 #define in3 25
 #define in4 33
 #define enA 14
 #define enB 32
-#define trigPin 5  // Tidak akan digunakan
-#define echoPin 18 // Tidak akan digunakan
+#define trigPin 5  
+#define echoPin 18
 
 MPU6050 accelgyro;
 float Qacc = 0.002, Qgyro = 0.003, R_kalman = 0.03;
@@ -26,9 +26,9 @@ float pidOutput;
 // Singleton values untuk Kp (contoh, perlu tuning)
 float Kp_S = 110.0, Kp_M = 140.0, Kp_L = 200.0;
 // Singleton values untuk Kd (contoh, perlu tuning)
-float Kd_S = 0.087, Kd_M = 0.05, Kd_L = 1.0; // Nilai Kd_L mungkin perlu dinaikkan
+float Kd_S = 0.087, Kd_M = 0.05, Kd_L = 1.0; 
 // Ki akan dibuat konstan kecil
-float Ki_fixed = 0.06; // Contoh, coba kurangi atau nolkan jika ada masalah
+float Ki_fixed = 0.06; 
 
 // Batas untuk input Fuzzy (error sudut dan kecepatan sudut)
 // Error sudut (derajat)
